@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muawiyya Khan Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <img  class="logo" src="logo.png" alt="">
+    <button id="menuToggle">☰ </button>
+    <ul>
+      <li><a href="#profile">Profile</a></li>
+      <li><a href="#academic">Academic</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#cv">CV</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">About Me</a></li>
+    </ul>
+    <button id="themeToggle">🌙</button>
+  </nav>
+</header>
+
+<main>
+
+<!-- PROFILE -->
+<section id="profile" class="section profile">
+  <img src="cv image.png" alt="Profile Picture">
+  <h1>Muawiyya Khan</h1>
+  <p><strong>Registration No:</strong> 5125893</p>
+  <div class="biodata">
+    <p><strong>Age:</strong> 20</p>
+    <p><strong>Permanent Address:</strong> Shangla Chakesar</p>
+    <p><strong>Present Address:</strong> UET Abbottabad</p>
+    <p><strong>Gender:</strong> Male</p>
+  </div>
+  <p class="bio">
+   Currently, I am a first-semester student of Software Engineering with a keen interest in studying the basic aspects of software development and computer technology. At the moment, I am at the point of embarking on acquiring fundamental learning regarding programming, problem-solving, and computer systems.
+
+I have finished my previous education in the science stream. This has given me a basic grounding in mathematics and logic. This serves me as a background in understanding software engineering principles and in dealing with technical problems.
+
+As a fresher in this area, I am really interested in acquiring new knowledge in programming languages, software, and methodologies. Furthermore, I have the motivation, hard work, and dedication to gain knowledge and skills. Therefore, my aim is to acquire in-depth knowledge and evolve into a skilled professional software engineer in the long run.
+  </p>
+</section>
+
+  
+  <div class="skills">
+    <span id="typed" class="typing"></span>
+  </div>
+
+
+<!-- ACADEMIC -->
+<section id="academic" class="section">
+  <h2>Academic Background</h2>
+  <input type="text" id="search" placeholder="Search level...">
+  <div class="table-responsive">
+    <table id="academicTable">
+      <thead>
+        <tr>
+          <th onclick="sortTable(0)">Level</th>
+          <th onclick="sortTable(1)">Institute</th>
+          <th onclick="sortTable(2)">Year</th>
+          <th onclick="sortTable(2)">Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Primary</td>
+          <td>Indus Valley Public High School Gunangar</td>
+          <td>2014</td>
+          <td>96%</td>
+        </tr>
+        <tr>
+          <td>Matric</td>
+          <td>Chakesir Model School</td>
+          <td>2023</td>
+          <td>86.5%</td>
+        </tr>
+        <tr>
+          <td>Intermediate</td>
+           <td>PG Jahanzeb College Swat</td>
+           <td>2024–2025</td>
+          <td>84.7%</td>
+        </tr>
+        <tr
+        ><td>Bachelor</td>
+          <td>UET Peshawar</td>
+           <td>2025–Present</td>
+          <td></td>
+        </tr>
+     
+
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section">
+  <h2>Skills</h2>
+  <div class="skill">
+    <p>C Language <span class="percent">0%</span></p>
+    <div class="progress-bar"><div class="progress-fill" data-percent="90"></div></div>
+  </div>
+  <div class="skill">
+    <p>HTML & CSS <span class="percent">0%</span></p>
+    <div class="progress-bar"><div class="progress-fill" data-percent="85"></div></div>
+  </div>
+  <div class="skill">
+    <p>JavaScript <span class="percent">0%</span></p>
+    <div class="progress-bar"><div class="progress-fill" data-percent="50"></div></div>
+  </div>
+</section>
+<!-- CV -->
+<section id="cv" class="section">
+  <h2>Curriculum Vitae</h2>
+  <div class="cv-buttons">
+    <button id="viewCVBtn">View CV</button>
+    <a href="cv.pdf" download class="download-btn">Download CV</a>
+  </div>
+  <div id="cvViewer" class="cv-viewer"></div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <h2>Contact Me</h2>
+  <form id="contactForm">
+
+<label for="name">Enter your Name</label>
+    <input type="text" placeholder="Your Name" required>
+
+<label for="email">Enter Your email</label>
+    <input type="email" placeholder="Your Email" required>
+
+   <label for="message">Type your Message</label> 
+    <textarea placeholder="Your Message" required></textarea>
+    <br>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" id="about">
+  <h3>About Me</h3>
+  <p class="about-text">
+
+  </p>
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/muawiyya-khan-58898a393?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a>
+    <a href="https://www.facebook.com/share/1HCixobH4i/" target="_blank">Facebook</a>
+    
+  </div>
+  <p class="copyright">
+    © 2025 Muawiyya Khan | All Rights Reserved
+  </p>
+
+ 
+
+
+</footer>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>

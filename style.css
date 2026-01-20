@@ -1,0 +1,493 @@
+/* ==============================
+   VARIABLES (THEME COLORS)
+============================== */
+:root {
+  --bg: #c7d2dd;        /* Light mode background */
+  --text: #222;          /* Light mode text */
+  --card: #ffffff;       /* Card/section background */
+  --accent: #007bff;     /* Primary accent color */
+}
+
+/* Dark mode overrides */
+body.dark {
+  --bg: #121212;         /* Dark background */
+  --text: #f1f1f1;       /* Light text for dark mode */
+  --card: #1e1e1e;       /* Dark card background */
+  --accent: #66aaff;      /* Accent color in dark mode */
+}
+
+/* ==============================
+   GLOBAL RESET & BASE STYLES
+============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ==============================
+   NAVBAR
+============================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  padding: 15px 30px;
+  background: var(--card);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  gap: 40px;
+}
+
+.navbar h2 {
+  margin: 0;
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+  
+}
+
+.navbar ul li a:hover {
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.navbar ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  height: 2px;
+  width: 0;
+  background: white;
+  border-radius: 2px;
+  transition: width 0.3s;
+}
+
+.navbar ul li a:hover::after {
+  width: 100%;
+}
+
+#themeToggle {
+  cursor: pointer;
+  font-size: 20px;
+  border: none;
+  background: transparent;
+  transition: transform 0.3s ease;
+}
+
+#themeToggle:hover {
+  transform: scale(1.2);
+}
+
+/* Hamburger menu for mobile */
+#menuToggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: var(--accent);
+  z-index: 1100;
+}
+
+/* Logo hover effect */
+.logo {
+  width: 150px;
+  height: 100px;
+  border-radius: 40px;
+  transition: transform 1s ease, background-color 0.3s ease, border-radius 0.3s ease;
+}
+
+.logo:hover {
+  transform: rotate(360deg);
+  background-color: white;
+border-radius: 50%;
+}
+
+/* ==============================
+   SECTIONS
+============================== */
+.section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.section:first-of-type {
+  padding-top: 100px;
+}
+
+/* ==============================
+   PROFILE SECTION
+============================== */
+.profile {
+  text-align: center;
+}
+
+.profile img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 3px solid black;
+}
+
+h1 {
+  font-size: 3em;
+  color: #00bfff;
+  margin: 0;
+  animation: fadeIn 2s ease forwards;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.skills {
+  font-size: 50px;
+  margin-top: 20px;
+  font-weight: bolder;
+  font: size 1.5rem;
+  color: #007bff;
+  font-family: 'Baloo Bhai 2', cursive;
+  display: flex;
+  justify-content: center;
+}
+
+.typing {
+  display: inline;
+  border-right: 6px solid #00bfff;
+  padding-right: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: larger;
+  animation: blink 0.7s step-end infinite;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes blink {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: #00bfff; }
+}
+
+/* ==============================
+   SKILLS PROGRESS
+============================== */
+.skill {
+  margin-bottom: 20px;
+}
+
+.skill p {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+.skill .progress-bar {
+  width: 100%;
+  height: 20px;
+  background: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.skill .progress-fill {
+  height: 100%;
+  background: #4caf50;
+  width: 0%;
+  transition: width 2s ease-in-out;
+}
+
+/* ==============================
+   SEARCH INPUT
+============================== */
+input#search {
+  padding: 10px;
+  width: 100%;
+  max-width: 300px;
+  margin: 20px 0;
+  border: 2px solid var(--accent);
+  transition: all 0.3s ease;
+}
+
+input#search:hover {
+  border-color: rgb(7, 23, 248);
+  box-shadow: 2px 6px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+/* ==============================
+   TABLE
+============================== */
+.table-responsive {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 2px solid black;
+  padding: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+th {
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+}
+
+th:hover {
+  background: #ffffff;
+  color: #121212;
+  box-shadow: 2px 7px 9px rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+}
+
+td:hover,
+tr:hover {
+  box-shadow: 2px 7px 9px rgba(97, 9, 47, 0.7);
+  background-color: #ffffff;
+  border-radius: 5px;
+  color: #121212;
+}
+
+/* ==============================
+   CV SECTION
+============================== */
+.cv-section {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 30px;
+  background: var(--card);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+}
+
+.cv-buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.download-btn {
+  background: green;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+  background: darkgreen;
+  box-shadow: 2px 9px 9px rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  transform: scale(1.05);
+}
+
+.cv-viewer {
+  width: 100%;
+  height: 90vh;
+  margin-top: 20px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.cv-viewer iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ==============================
+   FORM
+============================== */
+form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input,
+textarea,
+button {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: blue;
+  box-shadow: 2px 9px 9px rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  transform: scale(1.05);
+}
+
+/* ==============================
+   FOOTER
+============================== */
+.footer {
+  background: var(--card);
+  color: var(--text);
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 80px;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.footer h3 {
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.about-text {
+  max-width: 700px;
+  margin: 0 auto 20px;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 15px;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: -3px 8px 7px rgba(20, 3, 249, 0.3);
+}
+
+.footer .copyright {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+/* ==============================
+   RESPONSIVE MOBILE STYLES
+============================== */
+@media (max-width: 768px) {
+  .section:first-of-type {
+    padding-top: 300px;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0px 120px;
+    height: 100px;
+  
+  }
+
+  .navbar h2 {
+    font-size: 1.5em;
+  }
+
+  #menuToggle {
+    display: block;
+  }
+
+  #themeToggle {
+    position: absolute;
+    right: 60px;
+
+  }
+
+  .navbar ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 70px;
+    width: 200px;
+    background: var(--card);
+    padding: 10px;
+    gap: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+
+  .navbar ul.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .navbar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+  }
+
+  .logo {
+    width: 120px;
+    height: 80px;
+  }
+}
